@@ -1,0 +1,25 @@
+{
+  "root": "libs/spiderumapp/shared/util/hooks",
+  "sourceRoot": "libs/spiderumapp/shared/util/hooks/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/spiderumapp/shared/util/hooks/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spiderumapp/shared/util/hooks"],
+      "options": {
+        "jestConfig": "libs/spiderumapp/shared/util/hooks/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

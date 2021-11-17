@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "projects": {
+    "shared-data-access-redux": "libs/shared/data-access/redux",
+    "shared-ui": "libs/shared/ui",
+    "shared-util-auth": "libs/shared/util/auth",
+    "shared-util-axios": "libs/shared/util/axios",
+    "shared-util-day-time": "libs/shared/util/day-time",
+    "shared-util-route": "libs/shared/util/route",
+    "shared-util-service": "libs/shared/util/service",
+    "shared-util-toast": "libs/shared/util/toast",
+    "shared-util-typing": "libs/shared/util/typing",
+    "spiderumapp": "apps/spiderumapp",
+    "spiderumapp--home": "libs/spiderumapp/home",
+    "spiderumapp--login": "libs/spiderumapp/login",
+    "spiderumapp-e2e": "apps/spiderumapp-e2e",
+    "spiderumapp-home-src-lib-util-dispatch": "libs/spiderumapp/home/src/lib/util-dispatch",
+    "spiderumapp-shared-layout": "libs/spiderumapp/shared/layout",
+    "spiderumapp-shared-ui": "libs/spiderumapp/shared/ui",
+    "spiderumapp-shared-util-hocs": "libs/spiderumapp/shared/util/hocs",
+    "spiderumapp-shared-util-hooks": "libs/spiderumapp/shared/util/hooks",
+    "storybook-e2e-ui-e2e": "apps/storybook-e2e/ui-e2e"
+  }
+}

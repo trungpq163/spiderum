@@ -1,0 +1,23 @@
+{
+  "root": "libs/spiderumapp/home",
+  "sourceRoot": "libs/spiderumapp/home/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/spiderumapp/home/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spiderumapp/home"],
+      "options": {
+        "jestConfig": "libs/spiderumapp/home/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

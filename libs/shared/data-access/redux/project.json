@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/data-access/redux",
+  "sourceRoot": "libs/shared/data-access/redux/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/data-access/redux/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/data-access/redux"],
+      "options": {
+        "jestConfig": "libs/shared/data-access/redux/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
