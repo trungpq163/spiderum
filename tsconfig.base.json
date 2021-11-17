@@ -1,0 +1,72 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@spiderum/shared/data-access/redux": [
+        "libs/shared/data-access/redux/src/index.ts"
+      ],
+      "@spiderum/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@spiderum/shared/util/auth": ["libs/shared/util/auth/src/index.ts"],
+      "@spiderum/shared/util/axios": ["libs/shared/util/axios/src/index.ts"],
+      "@spiderum/shared/util/day-time": [
+        "libs/shared/util/day-time/src/index.ts"
+      ],
+      "@spiderum/shared/util/route": ["libs/shared/util/route/src/index.ts"],
+      "@spiderum/shared/util/service": [
+        "libs/shared/util/service/src/index.ts"
+      ],
+      "@spiderum/shared/util/toast": ["libs/shared/util/toast/src/index.ts"],
+      "@spiderum/shared/util/typing": ["libs/shared/util/typing/src/index.ts"],
+      "@spiderum/spiderumapp-feature-home-ui": [
+        "libs/spiderumapp/feature-home/ui/src/index.ts"
+      ],
+      "@spiderum/spiderumapp-feature-home-util": [
+        "libs/spiderumapp/feature-home/util/src/index.ts"
+      ],
+      "@spiderum/spiderumapp-feature-login-ui": [
+        "libs/spiderumapp/feature-login/ui/src/index.ts"
+      ],
+      "@spiderum/spiderumapp-feature-login-util": [
+        "libs/spiderumapp/feature-login/util/src/index.ts"
+      ],
+      "@spiderum/spiderumapp-login-feature-main": [
+        "libs/spiderumapp/login/feature-main/src/index.ts"
+      ],
+      "@spiderum/spiderumapp//authentication": [
+        "libs/spiderumapp/authentication/src/index.ts"
+      ],
+      "@spiderum/spiderumapp//home": ["libs/spiderumapp/home/src/index.ts"],
+      "@spiderum/spiderumapp//login": ["libs/spiderumapp/login/src/index.ts"],
+      "@spiderum/spiderumapp/home/src/lib/util-dispatch": [
+        "libs/spiderumapp/home/src/lib/util-dispatch/src/index.ts"
+      ],
+      "@spiderum/spiderumapp/shared/layout": [
+        "libs/spiderumapp/shared/layout/src/index.ts"
+      ],
+      "@spiderum/spiderumapp/shared/ui": [
+        "libs/spiderumapp/shared/ui/src/index.ts"
+      ],
+      "@spiderum/spiderumapp/shared/util/hocs": [
+        "libs/spiderumapp/shared/util/hocs/src/index.ts"
+      ],
+      "@spiderum/spiderumapp/shared/util/hooks": [
+        "libs/spiderumapp/shared/util/hooks/src/index.ts"
+      ],
+      "@spiderumapp/*": ["apps/spiderumapp/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

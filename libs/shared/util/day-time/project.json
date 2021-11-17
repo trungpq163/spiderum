@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/util/day-time",
+  "sourceRoot": "libs/shared/util/day-time/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/util/day-time/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/util/day-time"],
+      "options": {
+        "jestConfig": "libs/shared/util/day-time/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

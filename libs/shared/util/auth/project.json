@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/util/auth",
+  "sourceRoot": "libs/shared/util/auth/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/util/auth/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/util/auth"],
+      "options": {
+        "jestConfig": "libs/shared/util/auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

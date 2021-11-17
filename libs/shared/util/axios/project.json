@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/util/axios",
+  "sourceRoot": "libs/shared/util/axios/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/util/axios/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/util/axios"],
+      "options": {
+        "jestConfig": "libs/shared/util/axios/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

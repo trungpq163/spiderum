@@ -1,0 +1,29 @@
+{
+  "root": "apps/spiderumapp-e2e",
+  "sourceRoot": "apps/spiderumapp-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/spiderumapp-e2e/cypress.json",
+        "devServerTarget": "spiderumapp:serve",
+        "tsConfig": "apps/spiderumapp-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "spiderumapp:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/spiderumapp-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["spiderumapp"]
+}
