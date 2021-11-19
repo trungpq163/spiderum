@@ -7,7 +7,7 @@ export const loginService = (
 ): AxiosPromise<unknown> => {
   const config: AxiosRequestConfig = {
     method: 'post',
-    url: `${process.env.NEXT_PUBLIC_API_URL}/login`,
+    url: `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
     data: JSON.stringify({
       name,
       password,

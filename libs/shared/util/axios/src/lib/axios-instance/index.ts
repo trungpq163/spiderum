@@ -2,25 +2,16 @@
 import axios from 'axios';
 import { getUserToken } from '@spiderum/shared/util/auth';
 
-export const axiosInstance = axios.create({
+const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Add a request interceptor
-axiosInstance.interceptors.request.use(
-  (config: any) => {
-    const token = getUserToken();
-    if (token) {
-      config.headers['Authorization'] = 'Bearer ' + token;
-    }
-    return config;
-  },
-  (err) => {
-    Promise.reject(err);
-  }
-);
+// Set default token for all requests
+axiosInstance.defaults.headers.common[
+  'Authorization'
+] = `Bearer ${getUserToken()}`;
 
 // Add a response interceptor
 axiosInstance.interceptors.response.use(
@@ -34,4 +25,4 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export default axiosInstance;
+export { axiosInstance };
