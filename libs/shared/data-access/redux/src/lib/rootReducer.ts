@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import auth from './+auth/reducer';
 import post from './+post/reducer';
+import common from './+common/reducer';
 
 const rootReducer = combineReducers({
+  common,
   auth,
   post,
 });

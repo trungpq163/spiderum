@@ -40,3 +40,7 @@ export interface IGetPosts {
   type?: string;
   page?: number;
 }
+
+export interface ISetPost {
+  post_id: ObjectId;
+}

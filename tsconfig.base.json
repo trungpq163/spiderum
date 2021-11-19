@@ -42,6 +42,9 @@
       "@spiderum/spiderumapp-feature-login-util": [
         "libs/spiderumapp/feature-login/util/src/index.ts"
       ],
+      "@spiderum/spiderumapp-home-src-lib-util-helper": [
+        "libs/spiderumapp/home/src/lib/util-helper/src/index.ts"
+      ],
       "@spiderum/spiderumapp-login-feature-main": [
         "libs/spiderumapp/login/feature-main/src/index.ts"
       ],
@@ -50,9 +53,6 @@
       ],
       "@spiderum/spiderumapp//home": ["libs/spiderumapp/home/src/index.ts"],
       "@spiderum/spiderumapp//login": ["libs/spiderumapp/login/src/index.ts"],
-      "@spiderum/spiderumapp/home/src/lib/util-dispatch": [
-        "libs/spiderumapp/home/src/lib/util-dispatch/src/index.ts"
-      ],
       "@spiderum/spiderumapp/shared/layout": [
         "libs/spiderumapp/shared/layout/src/index.ts"
       ],
