@@ -14,7 +14,6 @@
     "spiderumapp--home": "libs/spiderumapp/home",
     "spiderumapp--login": "libs/spiderumapp/login",
     "spiderumapp-e2e": "apps/spiderumapp-e2e",
-    "spiderumapp-home-src-lib-util-dispatch": "libs/spiderumapp/home/src/lib/util-dispatch",
     "spiderumapp-shared-layout": "libs/spiderumapp/shared/layout",
     "spiderumapp-shared-ui": "libs/spiderumapp/shared/ui",
     "spiderumapp-shared-util-hocs": "libs/spiderumapp/shared/util/hocs",

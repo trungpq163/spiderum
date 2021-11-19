@@ -6,7 +6,8 @@
     "nextjs",
     "spiderumapp",
     "toastify",
-    "Trung"
+    "Trung",
+    "UNSAVE"
   ],
   "files.exclude": {
     "**/.git": true,

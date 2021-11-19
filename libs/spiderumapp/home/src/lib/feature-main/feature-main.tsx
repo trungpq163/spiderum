@@ -34,22 +34,22 @@ export const FeatureMain: React.FC = () => {
   }, [authInfo?.id]);
 
   useEffect(() => {
-    getHotPostsAPI();
-    getNewPostsAPI();
-    getTopPostsAPI();
-    getControversialPostsAPI();
+    // getHotPostsAPI();
+    // getNewPostsAPI();
+    // getTopPostsAPI();
+    // getControversialPostsAPI();
   }, []);
 
-  const getHotPostsAPI = () => {
-    const page = 1;
-    const type = 'hot';
-    if (isInFeed) {
-      dispatch(getHotPostsInFeed({ page, type }));
-      return;
-    }
-    dispatch(getHotPosts({ page, type }));
-    return;
-  };
+  // const getHotPostsAPI = () => {
+  //   const page = 1;
+  //   const type = 'hot';
+  //   if (isInFeed) {
+  //     dispatch(getHotPostsInFeed({ page, type }));
+  //     return;
+  //   }
+  //   dispatch(getHotPosts({ page, type }));
+  //   return;
+  // };
 
   const getNewPostsAPI = () => {
     const page = 1;
