@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Container, ArticlesWrapper } from './all-for-you.styles';
 import {
@@ -66,25 +67,21 @@ export function AllForYou(props: AllForYouProps) {
   return (
     <Container>
       <Title className="uppercase">DÀNH CHO BẠN</Title>
-      {loading ? (
-        'Loading......'
-      ) : (
-        <ArticlesWrapper>
-          {!!hotPosts &&
-            !!hotPosts?.posts &&
-            !!hotPosts?.posts?.items &&
-            slice(hotPosts?.posts?.items, 0, 4)?.map(
-              (post: IPost, index: number) => (
-                <Article
-                  key={index}
-                  handleSavePost={handleSavePost}
-                  handleUnSavePost={handleUnSavePost}
-                  {...post}
-                />
-              )
-            )}
-        </ArticlesWrapper>
-      )}
+      <ArticlesWrapper>
+        {!!hotPosts &&
+          !!hotPosts?.posts &&
+          !!hotPosts?.posts?.items &&
+          slice(hotPosts?.posts?.items, 0, 4)?.map(
+            (post: IPost, index: number) => (
+              <Article
+                key={index}
+                handleSavePost={handleSavePost}
+                handleUnSavePost={handleUnSavePost}
+                {...post}
+              />
+            )
+          )}
+      </ArticlesWrapper>
     </Container>
   );
 }

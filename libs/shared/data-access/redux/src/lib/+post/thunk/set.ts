@@ -11,16 +11,25 @@ import { showNotification } from '@spiderum/shared/util/toast';
 import { ISetPost } from '@spiderum/shared/util/typing';
 
 import { actionSuccess } from '../../+common/action';
-import { setLoading } from '../action';
 
 export const savePost =
   (payload: ISetPost) => async (dispatch: Dispatch<AnyAction>) => {
     try {
-      dispatch(setLoading());
       const result: AxiosResponse<any> = await savePostService(payload);
       if (result.data) {
         dispatch(actionSuccess());
+        showNotification({
+          message: 'Save post successfully!',
+          type: 'success',
+        });
         return;
+      }
+
+      if (!result.data) {
+        showNotification({
+          message: 'Save post failed!',
+          type: 'error',
+        });
       }
     } catch (e) {
       showNotification({ message: 'Error', type: 'error' });
@@ -30,7 +39,6 @@ export const savePost =
 export const unSavePost =
   (payload: ISetPost) => async (dispatch: Dispatch<AnyAction>) => {
     try {
-      dispatch(setLoading());
       const result: AxiosResponse<any> = await unSavePostService(payload);
       if (result.data) {
         dispatch(actionSuccess());

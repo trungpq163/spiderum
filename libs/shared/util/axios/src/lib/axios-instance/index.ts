@@ -9,9 +9,11 @@ const axiosInstance = axios.create({
 });
 
 // Set default token for all requests
-axiosInstance.defaults.headers.common[
-  'Authorization'
-] = `Bearer ${getUserToken()}`;
+if (getUserToken()) {
+  axiosInstance.defaults.headers.common[
+    'Authorization'
+  ] = `Bearer ${getUserToken()}`;
+}
 
 // Add a response interceptor
 axiosInstance.interceptors.response.use(
