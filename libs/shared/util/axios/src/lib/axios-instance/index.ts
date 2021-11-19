@@ -8,12 +8,19 @@ const axiosInstance = axios.create({
   },
 });
 
-// Set default token for all requests
-if (getUserToken()) {
-  axiosInstance.defaults.headers.common[
-    'Authorization'
-  ] = `Bearer ${getUserToken()}`;
-}
+// Add a request interceptor
+axiosInstance.interceptors.request.use(
+  (config: any) => {
+    const token = getUserToken();
+    if (token) {
+      config.headers['Authorization'] = 'Bearer ' + token;
+    }
+    return config;
+  },
+  (err) => {
+    Promise.reject(err);
+  }
+);
 
 // Add a response interceptor
 axiosInstance.interceptors.response.use(
