@@ -25,6 +25,11 @@ const App: NextPage<AppProps> = (props) => {
         ></meta>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link
+          rel="shortcut icon"
+          href="/icon/favicon.ico"
+          type="image/x-icon"
+        />
       </Head>
       <ToastContainer />
       <Component {...pageProps} />
