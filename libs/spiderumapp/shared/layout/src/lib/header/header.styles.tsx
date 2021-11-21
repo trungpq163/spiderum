@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 import styled from 'styled-components';
-import { Link } from '../link/link';
+import { Link } from '@spiderum/shared/ui';
 
 export const Container = styled.div`
   ${tw`py-2.5 border-b border-border cursor-pointer select-none fixed top-0 bg-white w-full`}
@@ -12,11 +12,11 @@ export const Wrapper = styled.div`
 `;
 
 export const NavLink = styled(Link)`
-  ${tw`font-sans text-xs font-medium text-sub-black`}
+  ${tw`font-sans text-xs font-semibold text-sub-black`}
 `;
 
 export const NavDropdown = styled.a`
-  ${tw`flex flex-row font-sans text-xs font-medium text-sub-black`}
+  ${tw`flex flex-row font-sans text-xs font-semibold text-sub-black`}
 `;
 
 export const NavTitle = styled.h1`
@@ -25,8 +25,4 @@ export const NavTitle = styled.h1`
 
 export const NavWrapper = styled.div`
   ${tw`flex flex-row justify-start items-center gap-x-2.5 ml-5 w-full`}
-`;
-
-export const WriteNewPostBtn = styled.button`
-  ${tw`text-13 font-semibold leading-tight text-white bg-pink px-1.5 py-1 rounded-xl hover:opacity-80 transform transition-all`}
 `;

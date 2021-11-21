@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container } from './button.styles';
+import { Loading } from '@nextui-org/react';
 
 export interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
   className?: string;
@@ -14,7 +15,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
       className={className}
       {...(restProps as any)}
     >
-      {loading ? <div>Loading......</div> : children}
+      {loading ? <Loading type="default" color="white" size={24} /> : children}
     </Container>
   );
 };

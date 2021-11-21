@@ -24,6 +24,6 @@ export const HeadingContentText = styled.p`
 `;
 
 export const Thumbnails = styled.img`
-  ${tw`object-cover h-auto transition-all transform bg-center hover:shadow-lg`}
+  ${tw`object-cover h-auto transition-all transform bg-center rounded-md hover:shadow-lg`}
   aspect-ratio: 1 / 1;
 `;

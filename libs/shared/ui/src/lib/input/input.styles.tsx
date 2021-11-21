@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.p`
-  ${tw`font-normal mb-0.5 text-sm text-sub-black`}
+  ${tw`font-normal mb-0.5 text-sm text-sub-black mt-0`}
 `;
 
 export const Required = styled.span`
@@ -30,5 +30,5 @@ export const Input = styled.input<{
 );
 
 export const Error = styled.p`
-  ${tw`flex items-center mt-1 text-xs font-normal text-red`}
+  ${tw`flex items-center mt-0.5 text-xs font-normal text-red mb-0`}
 `;

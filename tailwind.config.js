@@ -2,6 +2,7 @@ const { join } = require('path');
 const { createGlobPatternsForDependencies } = require('@nrwl/next/tailwind');
 
 module.exports = {
+  mode: 'jit',
   purge: [
     join(__dirname, './apps/**/**/*.{js,ts,jsx,tsx}'),
     join(__dirname, './libs/shared/ui/src/lib/**/*.{js,ts,jsx,tsx}'),
@@ -255,6 +256,8 @@ module.exports = {
         19.8: '198px',
         19.9: '199px',
         20: '200px',
+        22.2: '222px',
+        44.4: '444px',
       },
     },
   },

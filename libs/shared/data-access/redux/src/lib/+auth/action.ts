@@ -10,6 +10,10 @@ export const loginFailure = () => ({
   type: types.LOGIN_FAILURE,
 });
 
+export const logoutSuccess = () => ({
+  type: types.LOGOUT_SUCCESS,
+});
+
 export const setLoading = () => ({
   type: types.SET_AUTH_LOADING,
 });
