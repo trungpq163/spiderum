@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { wrapper } from '@spiderum/shared/data-access/redux';
+import { CssBaseline } from '@nextui-org/react';
 
 import type { AppProps } from 'next/app';
 import Router from 'next/router';
@@ -32,6 +33,7 @@ const App: NextPage<AppProps> = (props) => {
         />
       </Head>
       <ToastContainer />
+      <CssBaseline />
       <Component {...pageProps} />
     </>
   );

@@ -2,6 +2,7 @@
 import { ReactElement } from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { CssBaseline } from '@nextui-org/react';
 
 export default class CustomDocument extends Document<{
   styleTags: ReactElement[];
@@ -14,14 +15,22 @@ export default class CustomDocument extends Document<{
     );
 
     const styleTags = sheet.getStyleElement();
+    const styles = CssBaseline.flush();
 
-    return { ...page, styleTags };
+    return {
+      ...page,
+      styleTags,
+      styles,
+    };
   }
 
   render() {
     return (
       <Html>
-        <Head>{this.props.styleTags}</Head>
+        <Head>
+          {this.props.styles}
+          {this.props.styleTags}
+        </Head>
         <body>
           <Main />
           <NextScript />
