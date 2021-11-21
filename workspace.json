@@ -18,6 +18,7 @@
     "spiderumapp-shared-ui": "libs/spiderumapp/shared/ui",
     "spiderumapp-shared-util-hocs": "libs/spiderumapp/shared/util/hocs",
     "spiderumapp-shared-util-hooks": "libs/spiderumapp/shared/util/hooks",
+    "spiderumapp-shared-util-mock-data": "libs/spiderumapp/shared/util/mock-data",
     "storybook-e2e-ui-e2e": "apps/storybook-e2e/ui-e2e"
   }
 }

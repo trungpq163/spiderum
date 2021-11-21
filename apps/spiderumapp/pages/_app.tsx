@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { wrapper } from '@spiderum/shared/data-access/redux';
+import { CssBaseline } from '@nextui-org/react';
 
 import type { AppProps } from 'next/app';
 import Router from 'next/router';
@@ -25,8 +26,14 @@ const App: NextPage<AppProps> = (props) => {
         ></meta>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link
+          rel="shortcut icon"
+          href="/icon/favicon.ico"
+          type="image/x-icon"
+        />
       </Head>
       <ToastContainer />
+      <CssBaseline />
       <Component {...pageProps} />
     </>
   );

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { IAuth } from '@spiderum/shared/util/typing';
+import { IRootState, logoutSuccess } from '@spiderum/shared/data-access/redux';
 
 import {
   getUserInfoWithToken,
@@ -9,8 +10,18 @@ import {
 
 export const useAuth = () => {
   const [authInfo, setAuthInfo] = useState<IAuth | null>(null);
+  const { logout } = useSelector((state: IRootState) => state.auth);
 
-  const logout = useDispatch();
+  const dispatch = useDispatch();
+  const handleLogout = useCallback(() => {
+    dispatch(logoutSuccess());
+  }, []);
+
+  useEffect(() => {
+    if (logout) {
+      setAuthInfo(null);
+    }
+  }, [logout]);
 
   useEffect(() => {
     if (isAuthenticated()) {
@@ -19,5 +30,5 @@ export const useAuth = () => {
     }
   }, []);
 
-  return { authInfo, logout };
+  return { authInfo, handleLogout };
 };

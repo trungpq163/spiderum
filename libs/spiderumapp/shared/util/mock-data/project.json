@@ -1,0 +1,23 @@
+{
+  "root": "libs/spiderumapp/shared/util/mock-data",
+  "sourceRoot": "libs/spiderumapp/shared/util/mock-data/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/spiderumapp/shared/util/mock-data/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spiderumapp/shared/util/mock-data"],
+      "options": {
+        "jestConfig": "libs/spiderumapp/shared/util/mock-data/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
