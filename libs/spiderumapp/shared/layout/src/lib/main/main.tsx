@@ -1,5 +1,6 @@
 import { Container, Main } from './main.styles';
-import { Header, Footer } from '@spiderum/shared/ui';
+import { Footer } from '@spiderum/shared/ui';
+import { Header } from '../header/header';
 
 export interface IMainLayoutProps {
   children: React.ReactNode;
@@ -7,6 +8,7 @@ export interface IMainLayoutProps {
 
 export const MainLayout = (props: IMainLayoutProps) => {
   const { children } = props;
+
   return (
     <Container>
       <Header />

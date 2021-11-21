@@ -65,6 +65,9 @@
       "@spiderum/spiderumapp/shared/util/hooks": [
         "libs/spiderumapp/shared/util/hooks/src/index.ts"
       ],
+      "@spiderum/spiderumapp/shared/util/mock-data": [
+        "libs/spiderumapp/shared/util/mock-data/src/index.ts"
+      ],
       "@spiderumapp/*": ["apps/spiderumapp/*"]
     }
   },
