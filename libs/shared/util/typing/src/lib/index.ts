@@ -5,4 +5,5 @@ export * from './Post';
 export * from './Tag';
 export * from './Toast';
 export * from './User';
+export * from './Users';
 export * from './Category';

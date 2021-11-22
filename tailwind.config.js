@@ -50,6 +50,7 @@ module.exports = {
         sm: '16px',
         18: '18px',
         lg: '23px',
+        28: '28px',
         xl: '30px',
       },
       spacing: {
