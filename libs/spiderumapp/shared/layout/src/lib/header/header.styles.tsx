@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from '@spiderum/shared/ui';
 
 export const Container = styled.div`
-  ${tw`py-2.5 border-b border-border cursor-pointer select-none fixed top-0 bg-white w-full`}
+  ${tw`py-2.5 border-b border-border cursor-pointer select-none fixed top-0 bg-white w-full z-50`}
   box-shadow: 0 10px 15px -3px rgba(var(--blue-500),.05),0 4px 6px -2px rgba(var(--blue-500),.025);
 `;
 
