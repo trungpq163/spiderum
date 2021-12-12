@@ -18,6 +18,7 @@ import {
 import { MainLayout } from '@spiderum/spiderumapp/shared/layout';
 import { AllForYou } from './components/all-for-you/all-for-you';
 import { BestArticlesOfTheMonth } from './components/best-articles-of-the-month/best-articles-of-the-month';
+import { DontMiss } from './components/dont-miss/dont-miss';
 import { HotMembers } from './components/hot-members/hot-members';
 import { useAuth } from '@spiderum/spiderumapp/shared/util/hooks';
 import { useState } from 'react';
@@ -89,6 +90,7 @@ export const FeatureMain: React.FC = () => {
   return (
     <MainLayout>
       <Banner src="https://s3-ap-southeast-1.amazonaws.com/images.spiderum.com/sp-images/40ff96a034c011ecb567655fead64d3e.jpeg" />
+      <DontMiss />
       <AllForYou />
       <div className="flex flex-row gap-x-1.8">
         <BestArticlesOfTheMonth />
