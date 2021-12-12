@@ -1,17 +1,37 @@
-import styled from 'styled-components';
+import {
+  Title,
+  PrimaryArticles,
+  SecondaryArticles,
+} from '@spiderum/spiderumapp/shared/ui';
+import { Container, DontMissWrapper, Left, Right } from './dont-miss.styles';
 
 /* eslint-disable-next-line */
 export interface DontMissProps {}
 
-const StyledDontMiss = styled.div`
-  color: pink;
-`;
-
 export function DontMiss(props: DontMissProps) {
   return (
-    <StyledDontMiss>
-      <h1>Welcome to DontMiss!</h1>
-    </StyledDontMiss>
+    <Container>
+      <Title className="uppercase">Đừng bỏ lỡ</Title>
+      <DontMissWrapper>
+        <Left>
+          <PrimaryArticles />
+        </Left>
+        <Right>
+          <div>
+            <SecondaryArticles />
+          </div>
+          <div>
+            <SecondaryArticles />
+          </div>
+          <div>
+            <SecondaryArticles />
+          </div>
+          <div>
+            <SecondaryArticles />
+          </div>
+        </Right>
+      </DontMissWrapper>
+    </Container>
   );
 }
 
