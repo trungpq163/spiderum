@@ -1,18 +1,16 @@
-import styled from 'styled-components';
+import { IPost, ISetPost } from '@spiderum/shared/util/typing';
+import { PrimaryArticles } from '../primary-article/primary-article';
 
 /* eslint-disable-next-line */
-export interface SecondaryArticlesProps {}
+export interface ISecondaryArticlesProps extends IPost {
+  handleSavePost?: (data: ISetPost) => void;
+  handleUnSavePost?: (data: ISetPost) => void;
+  handleVotePost?: (data: ISetPost) => void;
+  handleUnVotePost?: (data: ISetPost) => void;
+}
 
-const StyledSecondaryArticles = styled.div`
-  color: pink;
-`;
-
-export function SecondaryArticles(props: SecondaryArticlesProps) {
-  return (
-    <StyledSecondaryArticles>
-      <h1>Welcome to SecondaryArticles!</h1>
-    </StyledSecondaryArticles>
-  );
+export function SecondaryArticles(props: ISecondaryArticlesProps) {
+  return <PrimaryArticles isSubArticle {...props} />;
 }
 
 export default SecondaryArticles;

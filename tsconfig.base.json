@@ -30,6 +30,7 @@
       ],
       "@spiderum/shared/util/toast": ["libs/shared/util/toast/src/index.ts"],
       "@spiderum/shared/util/typing": ["libs/shared/util/typing/src/index.ts"],
+      "@spiderum/shared/util/view": ["libs/shared/util/view/src/index.ts"],
       "@spiderum/spiderumapp-feature-home-ui": [
         "libs/spiderumapp/feature-home/ui/src/index.ts"
       ],

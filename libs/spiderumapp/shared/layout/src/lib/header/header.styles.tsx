@@ -15,10 +15,6 @@ export const NavLink = styled(Link)`
   ${tw`font-sans text-xs font-semibold text-sub-black`}
 `;
 
-export const NavDropdown = styled.a`
-  ${tw`flex flex-row font-sans text-xs font-semibold text-sub-black`}
-`;
-
 export const NavTitle = styled.h1`
   ${tw`text-xl font-normal text-black font-eksell`}
 `;

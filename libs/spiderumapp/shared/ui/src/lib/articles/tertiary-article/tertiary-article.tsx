@@ -38,12 +38,10 @@ export function TertiaryArticle(props: ITertiaryArticleProps) {
     : og_image_url;
 
   const handleSavePostClick = useCallback(() => {
-    console.log('handleSavePostClick');
     _id && handleSavePost && handleSavePost({ post_id: _id });
   }, [_id, handleSavePost]);
 
   const handleUnSavePostClick = useCallback(() => {
-    console.log('handleUnSavePostClick');
     _id && handleUnSavePost && handleUnSavePost({ post_id: _id });
   }, [_id, handleUnSavePost]);
 
