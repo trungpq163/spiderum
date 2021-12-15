@@ -2,7 +2,7 @@ module.exports = {
   ci: {
     collect: {
       // Static site
-      staticDistDir: 'dist/apps/spiderumapp/.next',
+      staticDistDir: './dist/apps/spiderumapp/.next',
       budgetPath: './budget.json',
     },
     upload: {
