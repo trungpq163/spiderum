@@ -66,8 +66,6 @@ jobs:
 
       - name: Check Performance with Lighthouse CI
         run: lhci autorun
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       - name: Stop all agents
         run: npx nx-cloud stop-all-agents
