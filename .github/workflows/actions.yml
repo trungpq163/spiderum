@@ -64,7 +64,7 @@ jobs:
       - name: Testing
         run: npx nx affected --target=test --parallel --max-parallel=2
 
-      - name: Check Performance
+      - name: Check Performance with Lighthouse CI
         run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
