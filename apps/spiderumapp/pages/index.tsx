@@ -4,7 +4,6 @@ import { FeatureMain as HomeContainer } from '@spiderum/spiderumapp//home';
 import { wrapper } from '@spiderum/shared/data-access/redux';
 
 const HomePage: NextPage = (props) => {
-  console.log('props', props);
   return <HomeContainer />;
 };
 

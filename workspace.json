@@ -10,6 +10,7 @@
     "shared-util-service": "libs/shared/util/service",
     "shared-util-toast": "libs/shared/util/toast",
     "shared-util-typing": "libs/shared/util/typing",
+    "shared-util-view": "libs/shared/util/view",
     "spiderumapp": "apps/spiderumapp",
     "spiderumapp--home": "libs/spiderumapp/home",
     "spiderumapp--login": "libs/spiderumapp/login",
