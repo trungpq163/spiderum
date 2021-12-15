@@ -44,3 +44,8 @@ export interface IGetPosts {
 export interface ISetPost {
   post_id: ObjectId;
 }
+
+export interface IVotePost {
+  action: number;
+  post_id: ObjectId;
+}

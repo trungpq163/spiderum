@@ -26,12 +26,15 @@ export function HotMembers(props: HotMembersProps) {
         {hotMembers &&
           hotMembers.map((member: IUser, index: number) => (
             <HotMember className="flex flex-row gap-x-1" key={index}>
-              <Avatar
-                src={`${process.env.NEXT_PUBLIC_API_AVATAR_URL}/${member?.avatar}`}
-                size="large"
-                color="primary"
-                bordered
-              />
+              {member?.avatar && (
+                <Avatar
+                  src={`${process.env.NEXT_PUBLIC_API_AVATAR_URL}/${member?.avatar}`}
+                  size="large"
+                  color="primary"
+                  bordered
+                />
+              )}
+
               <div>
                 <div className="text-sm font-bold text-black">
                   {member?.display_name}

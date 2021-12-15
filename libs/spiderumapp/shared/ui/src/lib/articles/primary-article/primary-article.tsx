@@ -3,60 +3,165 @@ import {
   Thumbnail,
   BottomContent,
   TopContent,
+  Wrapper,
 } from './primary-article.styles';
 import { Avatar } from '@nextui-org/react';
-import { BookmarkIcon } from '@heroicons/react/outline';
-import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/solid';
+import {
+  BookmarkIcon,
+  ThumbUpIcon,
+  EyeIcon,
+  AnnotationIcon,
+} from '@heroicons/react/outline';
+import {
+  BookmarkIcon as BookmarkSolidIcon,
+  ThumbUpIcon as ThumbUpSolidIcon,
+} from '@heroicons/react/solid';
+import { IPost, ISetPost } from '@spiderum/shared/util/typing';
+import {
+  handleReadingTime,
+  renderDayTimePostPublished,
+} from '@spiderum/shared/util/day-time';
+import { handleView } from '@spiderum/shared/util/view';
+import { useCallback } from 'react';
 
 /* eslint-disable-next-line */
-export interface PrimaryArticlesProps {}
+export interface PrimaryArticlesProps extends IPost {
+  isSubArticle?: boolean;
+  handleSavePost?: (data: ISetPost) => void;
+  handleUnSavePost?: (data: ISetPost) => void;
+  handleVotePost?: (data: ISetPost) => void;
+  handleUnVotePost?: (data: ISetPost) => void;
+}
 
 export function PrimaryArticles(props: PrimaryArticlesProps) {
+  const {
+    isSubArticle = false,
+    thumbnail,
+    og_image_url,
+    cat_id,
+    creator_id,
+    reading_time,
+    title,
+    description,
+    views_count,
+    comment_count,
+    point,
+    savedByUser,
+    userAction,
+    _id,
+    handleSavePost,
+    handleUnSavePost,
+    handleVotePost,
+    handleUnVotePost,
+    created_at,
+  } = props;
+  console.log({ props });
+
+  const thumbnailURL = process.env.NEXT_PUBLIC_API_THUMBNAIL_URL
+    ? `${process.env.NEXT_PUBLIC_API_THUMBNAIL_URL}/${thumbnail}`
+    : og_image_url;
+  const handleSavePostClick = useCallback(() => {
+    _id && handleSavePost && handleSavePost({ post_id: _id });
+  }, [_id, handleSavePost]);
+
+  const handleUnSavePostClick = useCallback(() => {
+    _id && handleUnSavePost && handleUnSavePost({ post_id: _id });
+  }, [_id, handleUnSavePost]);
+
+  const handleVotePostClick = useCallback(() => {
+    _id && handleVotePost && handleVotePost({ post_id: _id });
+  }, [_id, handleVotePost]);
+
+  const handleUnVotePostClick = useCallback(() => {
+    _id && handleUnVotePost && handleUnVotePost({ post_id: _id });
+  }, [_id, handleUnVotePost]);
+
   return (
-    <Container>
-      <Thumbnail src="https://picsum.photos/500" />
+    <Container isSubArticle={isSubArticle}>
+      <Thumbnail src={thumbnailURL} isSubArticle={isSubArticle} />
+      <Wrapper>
+        <TopContent.Wrapper isSubArticle={isSubArticle}>
+          <div className="flex flex-row items-center justify-center top-heading">
+            <TopContent.SubTitle>
+              <span className="uppercase">{cat_id?.name && cat_id.name} </span>
+              <span className="mx-0.5 text-black">|</span>{' '}
+              {handleReadingTime(reading_time ?? 0)}
+            </TopContent.SubTitle>
+            {savedByUser && (
+              <BookmarkSolidIcon
+                onClick={() => handleUnSavePostClick()}
+                className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
+                width="15"
+              />
+            )}
 
-      <TopContent.Wrapper>
-        <div className="flex flex-row items-center justify-center top-heading">
-          <TopContent.SubTitle>
-            KHOA HỌC - CÔNG NGHỆ <span className="mx-1">|</span> 20 phút đọc
-          </TopContent.SubTitle>
-          {true && (
-            <BookmarkSolidIcon
-              // onClick={() => handleUnSavePostClick()}
-              className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
-              width="15"
-            />
-          )}
+            {!savedByUser && (
+              <BookmarkIcon
+                onClick={() => handleSavePostClick()}
+                className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
+                width="15"
+              />
+            )}
+          </div>
 
-          {false && (
-            <BookmarkIcon
-              // onClick={() => handleSavePostClick()}
-              className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
-              width="15"
-            />
-          )}
-        </div>
+          <TopContent.Title>{title}</TopContent.Title>
+          <TopContent.Description>{description}</TopContent.Description>
+        </TopContent.Wrapper>
+        <BottomContent.Wrapper>
+          <div className="flex flex-row items-center justify-start gap-x-1.2">
+            {creator_id?.avatar ? (
+              <Avatar
+                text="sc"
+                size={50}
+                src={`${process.env.NEXT_PUBLIC_API_AVATAR_URL}/${creator_id?.avatar}`}
+              />
+            ) : (
+              <Avatar text="" size={50} src="https://picsum.photos/200" />
+            )}
 
-        <TopContent.Title>
-          CON NGƯỜI ĐANG BỊ CHI PHỐI BỞI CHỦ NGHĨA “NHANH VÀ NGẮN HƠN NỮA”
-        </TopContent.Title>
-
-        <TopContent.Description>
-          Hãy cẩn trọng trước những lựa chọn giải trí của bạn
-        </TopContent.Description>
-      </TopContent.Wrapper>
-
-      <BottomContent.Wrapper>
-        <Avatar text="sc" size={50} />
-        <div>
-          <BottomContent.Title>Đức Nhân</BottomContent.Title>
-          <BottomContent.SubTitle>28 tháng 10</BottomContent.SubTitle>
-        </div>
-        <BottomContent.Actions>66</BottomContent.Actions>
-        <BottomContent.Actions></BottomContent.Actions>
-        <BottomContent.Actions></BottomContent.Actions>
-      </BottomContent.Wrapper>
+            <div className="flex flex-col items-start justify-center">
+              <BottomContent.Title>
+                {creator_id?.display_name}
+              </BottomContent.Title>
+              <BottomContent.SubTitle>
+                {created_at && renderDayTimePostPublished(created_at)}
+              </BottomContent.SubTitle>
+            </div>
+          </div>
+          <BottomContent.ActionsWrapper>
+            <BottomContent.Actions>
+              {userAction === 1 ? (
+                <ThumbUpSolidIcon
+                  onClick={() => handleUnVotePostClick()}
+                  width={24}
+                  className="cursor-pointer text-sub-black hover:text-gray-900"
+                />
+              ) : (
+                <ThumbUpIcon
+                  onClick={() => handleVotePostClick()}
+                  width={24}
+                  className="cursor-pointer text-sub-black hover:text-gray-900"
+                />
+              )}{' '}
+              {point && handleView(point)}
+            </BottomContent.Actions>
+            <BottomContent.Actions>
+              <EyeIcon
+                width={24}
+                className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
+              />{' '}
+              {views_count && handleView(views_count)}
+            </BottomContent.Actions>
+            <BottomContent.Actions>
+              <AnnotationIcon
+                width={24}
+                className="ml-auto cursor-pointer text-sub-black hover:text-gray-900"
+              />
+              {comment_count && handleView(comment_count)}
+            </BottomContent.Actions>
+          </BottomContent.ActionsWrapper>
+        </BottomContent.Wrapper>
+      </Wrapper>
     </Container>
   );
 }

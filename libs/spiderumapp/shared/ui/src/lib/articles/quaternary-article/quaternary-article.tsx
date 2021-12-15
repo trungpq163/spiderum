@@ -28,7 +28,6 @@ export function QuaternaryArticles(props: QuaternaryArticlesProps) {
   const thumbnailURL = process.env.NEXT_PUBLIC_API_THUMBNAIL_URL
     ? `${process.env.NEXT_PUBLIC_API_THUMBNAIL_URL}/${thumbnail}`
     : og_image_url;
-  console.log('props', props);
 
   return (
     <Container>
