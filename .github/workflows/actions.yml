@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '14'
       - name: NPM Installation
-        run: npm install
+        run: npm install && npm install -g @lhci/cli@0.8.x
 
       - name: Start CI on NX-Cloud
         run: npx nx-cloud start-ci-run
@@ -33,6 +33,9 @@ jobs:
 
       - name: Testing
         run: npx nx affected --target=test --parallel --max-parallel=2
+
+      - name: Check Performance
+        run: lhci autorun
 
       - name: Stop all agents
         run: npx nx-cloud stop-all-agents
@@ -50,7 +53,7 @@ jobs:
         with:
           node-version: '14'
       - name: NPM Installation
-        run: npm install
+        run: npm install && npm install -g @lhci/cli@0.8.x
 
       - name: Start CI on NX-Cloud
         run: npx nx-cloud start-ci-run
@@ -60,6 +63,11 @@ jobs:
 
       - name: Testing
         run: npx nx affected --target=test --parallel --max-parallel=2
+
+      - name: Check Performance with Lighthouse CI
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       - name: Stop all agents
         run: npx nx-cloud stop-all-agents
