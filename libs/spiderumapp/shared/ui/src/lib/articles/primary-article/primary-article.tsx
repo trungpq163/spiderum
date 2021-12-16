@@ -19,10 +19,12 @@ import {
 import { IPost, ISetPost } from '@spiderum/shared/util/typing';
 import {
   handleReadingTime,
-  renderDayTimePostPublished,
+  renderDayTime,
 } from '@spiderum/shared/util/day-time';
 import { handleView } from '@spiderum/shared/util/view';
 import { useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { handleURL, ROUTE } from '@spiderum/shared/util/route';
 
 /* eslint-disable-next-line */
 export interface PrimaryArticlesProps extends IPost {
@@ -54,8 +56,15 @@ export function PrimaryArticles(props: PrimaryArticlesProps) {
     handleVotePost,
     handleUnVotePost,
     created_at,
+    slug = '',
   } = props;
-  console.log({ props });
+
+  const router = useRouter();
+  const postDetailsURL = handleURL({
+    url: ROUTE.POST_DETAILS,
+    param: 'slug',
+    value: slug,
+  });
 
   const thumbnailURL = process.env.NEXT_PUBLIC_API_THUMBNAIL_URL
     ? `${process.env.NEXT_PUBLIC_API_THUMBNAIL_URL}/${thumbnail}`
@@ -78,7 +87,11 @@ export function PrimaryArticles(props: PrimaryArticlesProps) {
 
   return (
     <Container isSubArticle={isSubArticle}>
-      <Thumbnail src={thumbnailURL} isSubArticle={isSubArticle} />
+      <Thumbnail
+        src={thumbnailURL}
+        isSubArticle={isSubArticle}
+        onClick={() => router.push(postDetailsURL)}
+      />
       <Wrapper>
         <TopContent.Wrapper isSubArticle={isSubArticle}>
           <div className="flex flex-row items-center justify-center top-heading">
@@ -104,8 +117,14 @@ export function PrimaryArticles(props: PrimaryArticlesProps) {
             )}
           </div>
 
-          <TopContent.Title>{title}</TopContent.Title>
-          <TopContent.Description>{description}</TopContent.Description>
+          {title && (
+            <TopContent.Title onClick={() => router.push(postDetailsURL)}>
+              {title}
+            </TopContent.Title>
+          )}
+          {description && (
+            <TopContent.Description>{description}</TopContent.Description>
+          )}
         </TopContent.Wrapper>
         <BottomContent.Wrapper>
           <div className="flex flex-row items-center justify-start gap-x-1.2">
@@ -124,7 +143,7 @@ export function PrimaryArticles(props: PrimaryArticlesProps) {
                 {creator_id?.display_name}
               </BottomContent.Title>
               <BottomContent.SubTitle>
-                {created_at && renderDayTimePostPublished(created_at)}
+                {created_at && renderDayTime(created_at)}
               </BottomContent.SubTitle>
             </div>
           </div>

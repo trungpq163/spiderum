@@ -54,6 +54,7 @@
       ],
       "@spiderum/spiderumapp//home": ["libs/spiderumapp/home/src/index.ts"],
       "@spiderum/spiderumapp//login": ["libs/spiderumapp/login/src/index.ts"],
+      "@spiderum/spiderumapp/post": ["libs/spiderumapp/post/src/index.ts"],
       "@spiderum/spiderumapp/shared/layout": [
         "libs/spiderumapp/shared/layout/src/index.ts"
       ],

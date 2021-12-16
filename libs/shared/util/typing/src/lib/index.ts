@@ -7,3 +7,4 @@ export * from './Toast';
 export * from './User';
 export * from './Users';
 export * from './Category';
+export * from './PostDetails';
