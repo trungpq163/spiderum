@@ -17,7 +17,7 @@ export const Container = styled.div<IContainerProps>`
 `;
 
 export const Thumbnail = styled.img<IThumbnailProps>`
-  ${tw`object-cover transition-all transform bg-center hover:shadow-lg`}
+  ${tw`object-cover transition-all transform bg-center cursor-pointer hover:shadow-lg`}
   ${({ isSubArticle }) => (isSubArticle ? tw`w-18.4 h-11.5` : tw`w-full `)}
   ${({ isSubArticle }) =>
     isSubArticle
@@ -35,7 +35,7 @@ export const TopContent = {
     ${({ isSubArticle }) => (!isSubArticle ? tw`my-1.2` : tw`mb-1.2`)}
   `,
   Title: styled.h1`
-    ${tw`my-0 text-lg font-semibold leading-tight text-black font-montserrat`}
+    ${tw`my-0 text-lg font-semibold leading-tight text-black cursor-pointer font-montserrat`}
   `,
   SubTitle: styled.h2`
     ${tw`my-0 font-sans font-medium text-13 text-sub-black`}

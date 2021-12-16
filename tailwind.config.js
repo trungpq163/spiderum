@@ -28,6 +28,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Noto Sans', 'sans-serif'],
+        serif: ['Noto Serif', 'serif'],
         eksell: ['Eksell Display', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
@@ -49,6 +50,7 @@ module.exports = {
         xs: '14px',
         sm: '16px',
         18: '18px',
+        19: '19px',
         lg: '23px',
         28: '28px',
         xl: '30px',

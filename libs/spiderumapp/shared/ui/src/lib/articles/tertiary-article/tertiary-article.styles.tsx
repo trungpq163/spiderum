@@ -12,7 +12,7 @@ export const FullName = styled.h2`
 `;
 
 export const Title = styled.h1`
-  ${tw`font-semibold leading-tight text-black text-18 font-montserrat`}
+  ${tw`font-semibold leading-tight text-black cursor-pointer text-18 font-montserrat`}
 `;
 
 export const HeadingContent = styled.div`
@@ -24,6 +24,6 @@ export const HeadingContentText = styled.p`
 `;
 
 export const Thumbnails = styled.img`
-  ${tw`object-cover h-auto transition-all transform bg-center rounded-md hover:shadow-lg`}
+  ${tw`object-cover h-auto transition-all transform bg-center rounded-md cursor-pointer hover:shadow-lg`}
   aspect-ratio: 1 / 1;
 `;

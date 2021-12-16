@@ -21,14 +21,20 @@ export interface HeaderProps {}
 export const GRAY = '#6E6D7A';
 export const PINK = '#EA4B89';
 export function Header(props: HeaderProps) {
-  const { authInfo, handleLogout } = useAuth();
+  const { authInfo } = useAuth();
 
   const router = useRouter();
+
+  const onClick = () => {
+    if (window.location.pathname !== '/') {
+      router.push(ROUTE.HOME);
+    }
+  };
 
   return (
     <Container>
       <Wrapper>
-        <NavTitle>Spiderum</NavTitle>
+        <NavTitle onClick={onClick}>Spiderum</NavTitle>
 
         <NavWrapper>
           <NavLink href={ROUTE.FORGOT_PASSWORD}>Đang theo dõi</NavLink>

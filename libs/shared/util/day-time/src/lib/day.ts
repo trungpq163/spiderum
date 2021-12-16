@@ -1,4 +1,4 @@
-export const renderDayTimePostPublished = (data: string): string => {
+export const renderDayTime = (data: string): string => {
   const day = new Date(data);
   const currentDay = new Date();
 
@@ -7,4 +7,9 @@ export const renderDayTimePostPublished = (data: string): string => {
   return checkSameYear
     ? `${day.getDate()} tháng ${day.getMonth() + 1}`
     : `${day.getDate()} tháng ${day.getMonth() + 1} năm ${day.getFullYear()}`;
+};
+
+export const renderDayTimeWithStyleSlash = (data: string): string => {
+  const day = new Date(data);
+  return `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()}`;
 };
