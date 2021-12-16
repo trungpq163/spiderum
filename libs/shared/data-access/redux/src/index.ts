@@ -5,3 +5,4 @@ export * from './lib/rootReducer';
 export * from './lib/+common/action';
 export * from './lib/+auth/action';
 export * from './lib/+users/thunk';
+export * from './lib/+post-details/thunk';

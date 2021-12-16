@@ -43,6 +43,7 @@ export const PUBLIC_ROUTE = {
   LOGOUT: '/logout',
   FORGOT_PASSWORD: '/forgot-password',
   ...PUBLIC_ROUTE_CATEGORY,
+  POST_DETAILS: '/bai-dang/:slug',
   USER_PROFILE: '/user/:slug',
   USER_ARTICLES: '/user/:slug/articles',
   USER_COMMENTS: '/user/:slug/comments',

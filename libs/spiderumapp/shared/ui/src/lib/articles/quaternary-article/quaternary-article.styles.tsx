@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Thumbnail = styled.img`
-  ${tw`w-[27%] object-cover transition-all transform bg-center hover:shadow-lg`}
+  ${tw`w-[27%] object-cover transition-all transform bg-center hover:shadow-lg cursor-pointer`}
   aspect-ratio: 237 / 177 !important;
   height: max-content !important;
 `;
@@ -16,7 +16,7 @@ export const Details = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw`my-0 font-bold text-black text-28`}
+  ${tw`my-0 font-bold text-black cursor-pointer text-28`}
 `;
 
 export const Category = styled.div`
