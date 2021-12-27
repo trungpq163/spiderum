@@ -8,7 +8,7 @@ export interface IGetPostDetails {
   slug: string;
 }
 
-export interface IPost {
+interface IPost {
   _id: ObjectId;
   type?: number;
   status?: number;
