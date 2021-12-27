@@ -69,10 +69,14 @@ export const Content = styled.div`
   }
 
   .image-tool__caption {
-    ${tw`font-medium text-center text-sub-black text-13`}
+    ${tw`mt-1 text-xs font-medium leading-tight text-center text-sub-black`}
   }
 
   img.image-tool__image-picture {
     ${tw`mx-auto`}
+  }
+
+  .ce-header {
+    ${tw`leading-tight`}
   }
 `;

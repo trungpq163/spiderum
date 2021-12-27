@@ -2,6 +2,9 @@ import { IRootState } from '@spiderum/shared/data-access/redux';
 import { useSelector } from 'react-redux';
 import { MainLayout } from '@spiderum/spiderumapp/shared/layout';
 import { Avatar } from '@nextui-org/react';
+import { Toolbar } from './components/toolbar/toolbar';
+import { renderDayTimeWithStyleSlash } from '@spiderum/shared/util/day-time';
+import { Subscription } from './components/subscription/subscription';
 import {
   Title,
   Container,
@@ -21,39 +24,43 @@ export function FeatureMain(props: FeatureMainProps) {
   return (
     <MainLayout>
       <Container>
-        {postDetails?.category && <Category>{postDetails.category}</Category>}
-        {postDetails?.title && <Title>{postDetails.title}</Title>}
-        {postDetails?.description && (
-          <Description>{postDetails.description}</Description>
+        {postDetails?.post?.cat_id?.name && (
+          <Category>{postDetails?.post?.cat_id?.name}</Category>
+        )}
+        {postDetails?.post?.title && <Title>{postDetails?.post?.title}</Title>}
+        {postDetails?.post?.description && (
+          <Description>{postDetails?.post?.description}</Description>
         )}
         <Top.Container>
           <Avatar
             text="sc"
             size={60}
-            src={postDetails?.authorInfo?.avatarURL}
+            src={`${process.env.NEXT_PUBLIC_API_AVATAR_URL}/${postDetails?.post?.creator_id?.avatar}`}
           />
 
           <Top.AccountInfo.Container>
-            {postDetails?.authorInfo?.name && (
+            {postDetails?.post?.creator_id?.display_name && (
               <Top.AccountInfo.Name>
-                {postDetails?.authorInfo?.name}
+                {postDetails?.post?.creator_id?.display_name}
               </Top.AccountInfo.Name>
             )}
-            {postDetails?.authorInfo?.postCreatedDate && (
+            {postDetails?.post?.created_at && (
               <Top.AccountInfo.PostedDate>
-                {postDetails?.authorInfo?.postCreatedDate}
+                {renderDayTimeWithStyleSlash(postDetails?.post?.created_at)}
               </Top.AccountInfo.PostedDate>
             )}
           </Top.AccountInfo.Container>
         </Top.Container>
-        {postDetails?.contentList &&
-          postDetails?.contentList.length > 0 &&
-          postDetails?.contentList.map((content: string, index: number) => (
+        {postDetails?.post?.body &&
+          postDetails?.post?.body?.length > 0 &&
+          postDetails?.post?.body?.map((content: string, index: number) => (
             <Content
               key={index}
               dangerouslySetInnerHTML={{ __html: content }}
             />
           ))}
+        <Toolbar />
+        <Subscription />
       </Container>
     </MainLayout>
   );

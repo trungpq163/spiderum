@@ -5,3 +5,10 @@ export interface ICategory {
   name?: string;
   slug?: string;
 }
+
+export interface ICatId {
+  id?: ObjectId;
+  description?: string;
+  name?: string;
+  slug?: string;
+}
