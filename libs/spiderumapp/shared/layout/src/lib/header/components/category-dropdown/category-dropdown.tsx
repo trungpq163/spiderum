@@ -21,7 +21,7 @@ export function CategoryDropdown(props: CategoryDropdownProps) {
     >
       <Menu.Button className="" as="div">
         <NavDropdown className="mr-auto">
-          Thể loại
+          Danh mục
           <DropdownIcon color="#6E6D7A" className="ml-0.2" />
         </NavDropdown>
       </Menu.Button>

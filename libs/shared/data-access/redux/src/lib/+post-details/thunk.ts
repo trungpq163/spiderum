@@ -13,6 +13,7 @@ export const getPostDetails =
     try {
       dispatch(setLoading());
       const result: AxiosResponse<any> = await getPostDetailsService(payload);
+
       if (result.data) {
         dispatch(getPostDetailsSuccess(result.data));
       }

@@ -1,39 +1,39 @@
 export const PUBLIC_ROUTE_CATEGORY = {
-  CATEGORY: '/category',
+  CATEGORY: '/danh-muc',
   // Quan diem - tranh luan
-  CATEGORY_OPINION_DEBATE: '/category/option-debase',
+  CATEGORY_OPINION_DEBATE: '/danh-muc/quan-diem-tranh-luan',
   // Truyen cam hung
-  CATEGORY_INSPIRE: '/category/inspire',
+  CATEGORY_INSPIRE: '/danh-muc/truyen-cam-hung',
   // Khoa hoc - cong nghe
-  CATEGORY_SCIENCE_TECHNOLOGY: '/category/science-technology',
+  CATEGORY_SCIENCE_TECHNOLOGY: '/danh-muc/khoa-hoc-cong-nghe',
   // science2vn
-  CATEGORY_SCIENCE2VN: '/category/science2vn',
+  CATEGORY_SCIENCE2VN: '/danh-muc/science2vn',
   // The thao
-  CATEGORY_SPORTS: '/category/sports',
+  CATEGORY_SPORTS: '/danh-muc/the-thao',
   // Game
-  CATEGORY_GAME: '/category/game',
+  CATEGORY_GAME: '/danh-muc/game',
   // spiderum event
-  CATEGORY_EVENT: '/category/event',
+  CATEGORY_EVENT: '/danh-muc/event',
   // otakulture
-  CATEGORY_OTAKULTURE: '/category/otakulture',
+  CATEGORY_OTAKULTURE: '/danh-muc/otakulture',
   // Sang tac
-  CATEGORY_COMPOSED: '/category/composed',
+  CATEGORY_COMPOSED: '/danh-muc/sang-tac',
   // comics
-  CATEGORY_COMICS: '/category/comics',
+  CATEGORY_COMICS: '/danh-muc/comics',
   // film
-  CATEGORY_FILM: '/category/film',
+  CATEGORY_FILM: '/danh-muc/film',
   // books
-  CATEGORY_BOOKS: '/category/books',
+  CATEGORY_BOOKS: '/danh-muc/sach',
   // travel - food
-  CATEGORY_TRAVEL_FOOD: '/category/travel-food',
+  CATEGORY_TRAVEL_FOOD: '/danh-muc/du-lich-am-thuc',
   // skills
-  CATEGORY_SKILLS: '/category/skills',
+  CATEGORY_SKILLS: '/danh-muc/ky-nang',
   // music
-  CATEGORY_MUSIC: '/category/music',
+  CATEGORY_MUSIC: '/danh-muc/am-nhac',
   // english zone
-  CATEGORY_ENGLISH_ZONE: '/category/english-zone',
+  CATEGORY_ENGLISH_ZONE: '/danh-muc/english-zone',
   // chat - talk
-  CATEGORY_CHAT_TALK: '/category/chat-talk',
+  CATEGORY_CHAT_TALK: '/danh-muc/chuyen-tro-tam-su',
 };
 
 export const PUBLIC_ROUTE = {
