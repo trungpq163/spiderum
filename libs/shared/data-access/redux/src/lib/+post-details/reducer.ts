@@ -18,7 +18,7 @@ const postDetailsReducer = (state = initialState, action: AnyAction) => {
   return produce(state, (draft) => {
     switch (action.type) {
       case types.GET_POST_DETAILS_SUCCESS:
-        draft.postDetails = action.payload.data;
+        draft.postDetails = action.payload;
         draft.loading = false;
         break;
 

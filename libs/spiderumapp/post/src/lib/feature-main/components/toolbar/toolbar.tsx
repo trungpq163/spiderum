@@ -2,6 +2,7 @@ import { ThumbUpIcon, BookmarkIcon } from '@heroicons/react/outline';
 import { IRootState } from '@spiderum/shared/data-access/redux';
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from '@spiderum/shared/ui';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { Container } from './toolbar.styles';
 
 /* eslint-disable-next-line */
@@ -15,6 +16,10 @@ export function Toolbar(props: ToolbarProps) {
   const { postDetails, loading } = useSelector(
     (state: IRootState) => state.postDetails
   );
+
+  const { asPath } = useRouter();
+
+  const currentURL = `${process.env.NEXT_PUBLIC_SPIDERUM_URL}/${asPath}`;
 
   const clickToShare =
     (url: string): (() => void) =>
@@ -37,19 +42,19 @@ export function Toolbar(props: ToolbarProps) {
         <FacebookIcon
           className="cursor-pointer"
           onClick={clickToShare(
-            `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
+            `https://www.facebook.com/sharer/sharer.php?u=${currentURL}`
           )}
         />
         <LinkedinIcon
           className="cursor-pointer"
           onClick={clickToShare(
-            `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`
+            `https://www.linkedin.com/sharing/share-offsite/?url=${currentURL}`
           )}
         />
         <TwitterIcon
           className="cursor-pointer"
           onClick={clickToShare(
-            `https://twitter.com/intent/tweet?text=${window.location.href}`
+            `https://twitter.com/intent/tweet?text=${currentURL}`
           )}
         />
       </div>

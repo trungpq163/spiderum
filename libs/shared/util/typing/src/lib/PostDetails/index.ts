@@ -8,8 +8,38 @@ export interface IGetPostDetails {
   slug: string;
 }
 
+export interface IBlock {
+  _id?: ObjectId;
+  status?: number;
+  type?: string;
+  data?: {
+    text?: string;
+    alignment?: string;
+    file?: {
+      url?: string;
+    };
+    link?: string;
+    meta?: {
+      title?: string;
+      description?: string;
+      image?: {
+        url?: string;
+      };
+    };
+    caption?: string;
+    dockLeft?: boolean;
+    stretched?: boolean;
+    expanded?: boolean;
+    dockRight?: boolean;
+  };
+  post_id?: ObjectId;
+  __v?: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 interface IPost {
-  _id: ObjectId;
+  _id?: ObjectId;
   type?: number;
   status?: number;
   is_editor_pick?: boolean;
@@ -42,12 +72,13 @@ interface IPost {
   __v?: number;
   og_image_url?: string;
   property?: {
-    thumbnailWidth: number;
-    thumbnailHeight: number;
+    thumbnailWidth?: number;
+    thumbnailHeight?: number;
   };
-  ads_id?: any;
   picked_at?: string;
-  body?: any;
+  body?: {
+    blocks?: IBlock[];
+  };
 }
 
 export interface IPostPageOptions {
