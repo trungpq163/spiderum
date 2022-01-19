@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw`mt-1 font-sans text-4xl font-semibold leading-none text-black`}
+  ${tw`mt-1 font-sans text-4xl font-semibold leading-tight text-black`}
 `;
 
 export const Category = styled.h2`
