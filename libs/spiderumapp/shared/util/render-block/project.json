@@ -1,0 +1,25 @@
+{
+  "root": "libs/spiderumapp/shared/util/render-block",
+  "sourceRoot": "libs/spiderumapp/shared/util/render-block/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/spiderumapp/shared/util/render-block/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spiderumapp/shared/util/render-block"],
+      "options": {
+        "jestConfig": "libs/spiderumapp/shared/util/render-block/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

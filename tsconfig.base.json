@@ -70,6 +70,9 @@
       "@spiderum/spiderumapp/shared/util/mock-data": [
         "libs/spiderumapp/shared/util/mock-data/src/index.ts"
       ],
+      "@spiderum/spiderumapp/shared/util/render-block": [
+        "libs/spiderumapp/shared/util/render-block/src/index.ts"
+      ],
       "@spiderumapp/*": ["apps/spiderumapp/*"]
     }
   },
