@@ -30,8 +30,6 @@ export function FeatureMain(props: FeatureMainProps) {
     (state: IRootState) => state.postDetails
   );
 
-  console.log({ postDetails, loading });
-
   const renderBodyBlock = (blocks: IBlock[]) => {
     return blocks.map((block: IBlock, index: number) => {
       switch (block.type) {
@@ -84,8 +82,7 @@ export function FeatureMain(props: FeatureMainProps) {
             text="sc"
             size={60}
             src={`${process.env.NEXT_PUBLIC_API_AVATAR_URL}/${postDetails?.post?.creator_id?.avatar}`}
-          />
-
+          />     
           <Top.AccountInfo.Container>
             {postDetails?.post?.creator_id?.display_name && (
               <Top.AccountInfo.Name>

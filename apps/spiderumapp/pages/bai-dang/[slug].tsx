@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextPage } from 'next';
-// import { FeatureMain as HomeContainer } from '@spiderum/spiderumapp//';
 import { FeatureMain as PostDetailsContainer } from '@spiderum/spiderumapp/post';
 import { IRootState, wrapper } from '@spiderum/shared/data-access/redux';
 import { IGetPostDetails } from '@spiderum/shared/util/typing';
