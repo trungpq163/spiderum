@@ -34,6 +34,7 @@ const App: NextPage<AppProps> = (props) => {
       </Head>
       <ToastContainer />
       <CssBaseline />
+      
       <Component {...pageProps} />
     </>
   );
